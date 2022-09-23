@@ -1,0 +1,63 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (7.0.4)
+      activesupport (= 7.0.4)
+    activerecord (7.0.4)
+      activemodel (= 7.0.4)
+      activesupport (= 7.0.4)
+    activesupport (7.0.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    concurrent-ruby (1.1.10)
+    faker (2.23.0)
+      i18n (>= 1.8.11, < 2)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    minitest (5.16.3)
+    multi_json (1.15.0)
+    mustermann (2.0.2)
+      ruby2_keywords (~> 0.0.1)
+    phlex (0.2.2)
+      zeitwerk (~> 2.6)
+    rack (2.2.4)
+    rack-protection (2.2.2)
+      rack
+    rake (13.0.6)
+    ruby2_keywords (0.0.5)
+    sinatra (2.2.2)
+      mustermann (~> 2.0)
+      rack (~> 2.2)
+      rack-protection (= 2.2.2)
+      tilt (~> 2.0)
+    sinatra-activerecord (2.0.25)
+      activerecord (>= 4.1)
+      sinatra (>= 1.0)
+    sinatra-contrib (2.2.2)
+      multi_json
+      mustermann (~> 2.0)
+      rack-protection (= 2.2.2)
+      sinatra (= 2.2.2)
+      tilt (~> 2.0)
+    sqlite3 (1.5.0-arm64-darwin)
+    tilt (2.0.11)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
+    zeitwerk (2.6.0)
+
+PLATFORMS
+  arm64-darwin-21
+
+DEPENDENCIES
+  faker (~> 2.23)
+  phlex (~> 0.2.2)
+  rake (~> 13.0)
+  sinatra (~> 2.2)
+  sinatra-activerecord (~> 2.0)
+  sinatra-contrib (~> 2.2)
+  sqlite3 (~> 1.5)
+
+BUNDLED WITH
+   2.3.22
