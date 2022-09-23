@@ -1,5 +1,8 @@
 # Phlex Sinatra app
 
+![phlex-tweet](https://user-images.githubusercontent.com/3710766/192023883-224566e6-a48b-4d47-94b7-926dace34690.gif)
+
+
 This is a short exploration of the [Phlex](https://www.phlex.fun/) framework using Sinatra. I wanted to
 play around with Phlex after hearing about it on [Remote Ruby](https://dev.to/remote-ruby/phlexing-with-joel-drapper).
 
