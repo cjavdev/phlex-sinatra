@@ -36,11 +36,11 @@ class FormComponent < Phlex::Component
           text "What's on your mind?"
         end
         div class: "mt-1" do
-          textarea rows: "4", name: "content", class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          textarea rows: "4", name: "content", class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm"
         end
       end
       div class: "mt-4" do
-        button "Tweet", class: "inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        button "Send it!", class: "inline-flex items-center rounded-md border border-transparent bg-cyan-400 px-6 py-3 text-base font-medium text-gray-900 shadow-sm hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
       end
     end
   end
