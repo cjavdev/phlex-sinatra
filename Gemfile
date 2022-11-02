@@ -8,7 +8,7 @@ gem "sinatra", "~> 2.2"
 
 gem "sinatra-contrib", "~> 2.2"
 
-gem "phlex", "~> 0.2.2"
+gem "phlex", "~> 0.4"
 
 gem "sinatra-activerecord", "~> 2.0"
 
