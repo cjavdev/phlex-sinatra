@@ -20,8 +20,10 @@ GEM
     multi_json (1.15.0)
     mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
-    phlex (0.2.2)
+    phlex (0.4.0)
+      syntax_tree (~> 3.6)
       zeitwerk (~> 2.6)
+    prettier_print (1.0.2)
     rack (2.2.4)
     rack-protection (2.2.2)
       rack
@@ -32,7 +34,7 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.2.2)
       tilt (~> 2.0)
-    sinatra-activerecord (2.0.25)
+    sinatra-activerecord (2.0.26)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
     sinatra-contrib (2.2.2)
@@ -41,18 +43,20 @@ GEM
       rack-protection (= 2.2.2)
       sinatra (= 2.2.2)
       tilt (~> 2.0)
-    sqlite3 (1.5.0-arm64-darwin)
+    sqlite3 (1.5.3-arm64-darwin)
+    syntax_tree (3.6.3)
+      prettier_print
     tilt (2.0.11)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    zeitwerk (2.6.0)
+    zeitwerk (2.6.4)
 
 PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
   faker (~> 2.23)
-  phlex (~> 0.2.2)
+  phlex (~> 0.4)
   rake (~> 13.0)
   sinatra (~> 2.2)
   sinatra-activerecord (~> 2.0)
