@@ -16,19 +16,19 @@ end
 set :database, {adapter: "sqlite3", database: "tweets.sqlite3"}
 
 module Views
-  class Layout < Phlex::View
+  class Layout < Phlex::HTML
     def initialize(title:)
       @title = title
     end
 
-    def template(&)
+    def template
       doctype
       head_template
 
       body class: "mt-8" do
         div class: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" do
           div class: "mx-auto max-w-3xl" do
-            yield_content(&)
+            yield
           end
         end
       end
@@ -42,7 +42,7 @@ module Views
     end
   end
 
-  class Index < Phlex::View
+  class Index < Phlex::HTML
     def initialize(tweets:)
       @tweets = tweets
     end
@@ -60,7 +60,7 @@ module Views
   end
 
   module Tweets
-    class List < Phlex::View
+    class List < Phlex::HTML
       def initialize(tweets)
         @tweets = tweets
       end
@@ -93,7 +93,7 @@ module Views
       end
     end
 
-    class Form < Phlex::View
+    class Form < Phlex::HTML
       def template
         form action: "/tweets", method: "post" do
           div do
@@ -114,7 +114,7 @@ module Views
     end
   end
 
-  class Gravatar < Phlex::View
+  class Gravatar < Phlex::HTML
     def initialize(email:)
       @email = email
     end
