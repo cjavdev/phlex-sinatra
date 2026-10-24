@@ -16,19 +16,19 @@ end
 set :database, {adapter: "sqlite3", database: "tweets.sqlite3"}
 
 module Views
-  class Layout < Phlex::View
+  class Layout < Phlex::HTML
     def initialize(title:)
       @title = title
     end
 
-    def template(&)
+    def view_template(&)
       doctype
       head_template
 
       body class: "mt-8" do
         div class: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" do
           div class: "mx-auto max-w-3xl" do
-            yield_content(&)
+            yield
           end
         end
       end
@@ -42,12 +42,12 @@ module Views
     end
   end
 
-  class Index < Phlex::View
+  class Index < Phlex::HTML
     def initialize(tweets:)
       @tweets = tweets
     end
 
-    def template
+    def view_template
       render Layout.new(title: "Phlex/Sinatra Twitter Clone") do
         h1 class: "text-3xl font-bold" do
           "Updates"
@@ -60,12 +60,12 @@ module Views
   end
 
   module Tweets
-    class List < Phlex::View
+    class List < Phlex::HTML
       def initialize(tweets)
         @tweets = tweets
       end
 
-      def template(&)
+      def view_template(&)
         ul role: "list", class: "divide-y divide-gray-200" do
           @tweets.each { |tweet| item_template(tweet) }
         end
@@ -81,11 +81,11 @@ module Views
               div class: "flex items-center justify-between" do
                 h3(class: "text-sm font-medium") { tweet.user.name }
                 p class: "text-sm text-gray-500" do
-                  text tweet.created_at
+                  plain tweet.created_at.to_s
                 end
               end
               p class: "text-sm text-gray-500" do
-                text tweet.content
+                plain tweet.content
               end
             end
           end
@@ -93,12 +93,12 @@ module Views
       end
     end
 
-    class Form < Phlex::View
-      def template
+    class Form < Phlex::HTML
+      def view_template
         form action: "/tweets", method: "post" do
           div do
             label for: "comment", class: "block text-sm font-medium text-gray-700 mt-4" do
-              text "What's on your mind?"
+              plain "What's on your mind?"
             end
             div class: "mt-1" do
               textarea rows: "4", name: "content", class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring-cyan-400 sm:text-sm"
@@ -114,19 +114,19 @@ module Views
     end
   end
 
-  class Gravatar < Phlex::View
+  class Gravatar < Phlex::HTML
     def initialize(email:)
       @email = email
     end
 
-    def template
+    def view_template
       img class: "h-6 w-6 rounded-full", src: image_src
     end
 
     private
 
-    def image_src = "https://www.gravatar.com/avatar/#{hash}"
-    def hash = Digest::MD5.hexdigest(@email)
+    def image_src = "https://www.gravatar.com/avatar/#{email_hash}"
+    def email_hash = Digest::MD5.hexdigest(@email)
   end
 end
 
